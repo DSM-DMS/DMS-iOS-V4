@@ -26,10 +26,10 @@ struct ChatView: View {
                     TextField("메세지를 입력하세요...", text: $message, onEditingChanged: { if $0 { self.kGuardian.showField = 0 } }) {
                         UIApplication.shared.endEditing()
                     }
-                        .background(GeometryGetter(rect: $kGuardian.rects[0]))
-                        .font(Font.system(size: 12))
-                        .padding(.leading, 32)
-                        
+                    .background(GeometryGetter(rect: $kGuardian.rects[0]))
+                    .font(Font.system(size: 12))
+                    .padding(.leading, 32)
+                    
                 }
                 Button(action: {
                     
@@ -42,6 +42,10 @@ struct ChatView: View {
             }.offset(y: kGuardian.slide).animation(.easeOut(duration: 0.45))
                 .padding(.bottom, 16)
         }
+    }
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

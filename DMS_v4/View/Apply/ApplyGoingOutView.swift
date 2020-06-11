@@ -17,7 +17,6 @@ struct ApplyGoingOutView: View {
     @State private var monthCount = 0
     
     var rkManager1 = RKManager(calendar: Calendar.current, minimumDate: Date(), maximumDate: Date().addingTimeInterval(60*60*24*365), mode: 0)
-    var rkManager2 = RKManager(calendar: Calendar.current, minimumDate: Date(), maximumDate: Date().addingTimeInterval(60*60*24*365), mode: 0)
     
     var dateToGoout: String = ""
     var timeToGoout: String = ""
