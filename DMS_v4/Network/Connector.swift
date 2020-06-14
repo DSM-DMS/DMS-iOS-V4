@@ -51,15 +51,17 @@ public extension URLRequest{
         return self
     }
     
-    func decodeData<T>(_ type: T.Type) -> Observable<(Int, T?)> where T: Decodable{
+    func decodeData<T>(_ type: T.Type) -> Observable<(Int, String, [String: Any])> where T: Decodable{
         return requestData(self)
             .single()
             .map{ ($0.0.statusCode, $0.1) }
             .map{ (code, data) in
-                let decodeData = try? JSONDecoder().decode(type, from: data)
-                return (code, decodeData)
+                let str = String(decoding: data, as: UTF8.self)
+                let jsonSerialization = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                
+                return (code, str, jsonSerialization)
             }
-            .filter{ (code, _) in
+            .filter{ (code, _, _) in
                 if code == 500{ print("오류") }
                 return code != 500
             }

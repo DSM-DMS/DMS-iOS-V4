@@ -10,11 +10,13 @@ import SwiftUI
 
 struct MealContentsView: View {
     
+    @Binding var mealArray: [String]
+    
     var body: some View {
         VStack {
-            CardView(lblTitle: "아침", lblCondition: "급식이 없습니다")
-            CardView(lblTitle: "점심", lblCondition: "허니버터옥수수, 강황쌀밥, 돼지갈비김치찌개, 애호박새우젓볶음, 오이소박이, 깐쇼새우")
-            CardView(lblTitle: "저녁", lblCondition: "허니버터옥수수, 강황쌀밥, 돼지갈비김치찌개, 애호박새우젓볶음, 오이소박이, 깐쇼새우")
+            CardView(lblTitle: "아침", lblCondition: mealArray[0])
+            CardView(lblTitle: "점심", lblCondition: mealArray[1])
+            CardView(lblTitle: "저녁", lblCondition: mealArray[2])
         }
     }
 }
@@ -54,6 +56,6 @@ private struct CardView: View {
 
 struct MealContentsView_Previews: PreviewProvider {
     static var previews: some View {
-        MealContentsView()
+        MealContentsView(mealArray: .constant(["급식이 없습니다.", "급식이 없습니다.", "급식이 없습니다."]))
     }
 }

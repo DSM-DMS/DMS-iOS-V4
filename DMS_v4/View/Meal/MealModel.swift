@@ -1,16 +1,17 @@
 //
 //  MealModel.swift
-//  DMS_SwiftUI
+//  DMS_v4
 //
-//  Created by leedonggi on 2019/09/24.
-//  Copyright © 2019 leedonggi. All rights reserved.
+//  Created by leedonggi on 2020/06/12.
+//  Copyright © 2020 leedonggi. All rights reserved.
 //
 
 import Foundation
 
 public typealias MealTuple = (breakfast: String, lunch: String, dinner: String)
 
-struct MealModel: Codable {
+public struct MealModel: Codable{
+    
     let breakfast: [String]
     let lunch: [String]
     let dinner: [String]
@@ -28,4 +29,5 @@ struct MealModel: Codable {
         data.removeLast(2)
         return data
     }
+    
 }

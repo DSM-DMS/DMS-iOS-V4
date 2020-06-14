@@ -100,5 +100,10 @@ extension View {
         }
     }
     
+    func getStr(_ arr: [String]) -> String{
+        var data = arr.map{ $0 + ", " }.reduce(""){ $0 + $1 }
+        data.removeLast(2)
+        return data
+    }
     
 }
