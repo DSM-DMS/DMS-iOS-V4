@@ -12,7 +12,6 @@ struct ConfirmationView: View {
     @State private var code: String = ""
     @State private var editingCode = false
     
-    let aniDuration = 0.2
     let message = ""
     
     var body: some View {
@@ -31,10 +30,10 @@ struct ConfirmationView: View {
                     ZStack {
                         Image("icon_code")
                             .frame(width: 24, height: 16)
-                            .animation(.easeInOut(duration: aniDuration))
+                            .animation(.easeInOut)
                         Image("icon_code_light")
                             .frame(width: 24, height: 16)
-                            .animation(.easeInOut(duration: aniDuration))
+                            .animation(.easeInOut)
                             .opacity(editingCode ? 1 : 0)
                     }
                     
@@ -55,7 +54,7 @@ struct ConfirmationView: View {
                     .foregroundColor(editingCode ? Color("CustomGreen") : Color(ColorToUse.getColor(.Black700)()))
                     .padding(.horizontal, 26)
                     .padding(.top, -4)
-                    .animation(.easeInOut(duration: aniDuration))
+                    .animation(.easeInOut)
                 HStack {
                     Text(message)
                         .font(Font.system(size: 12))
@@ -66,22 +65,6 @@ struct ConfirmationView: View {
                 }
             }
             Spacer()
-            HStack {
-                Spacer()
-                ZStack {
-                    Circle()
-                        .foregroundColor(Color("CustomGreen"))
-                        .frame(width: 48, height: 48)
-                        .onTapGesture {
-                            self.editingCode.toggle()
-                    }
-                    Image(systemName: "arrow.right")
-                        .foregroundColor(Color.white)
-                        .frame(width: 16, height: 16)
-                }
-                .padding(.trailing, 24)
-                .padding(.bottom, 24)
-            }
         }
     }
 }

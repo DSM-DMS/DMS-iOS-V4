@@ -11,8 +11,6 @@ import UIKit
 import SwiftUI
 import Combine
 
-public var mypageNum = false
-
 class UIScrollViewViewController: UIViewController, UIScrollViewDelegate {
     
     var pageNum = 0
@@ -45,14 +43,6 @@ class UIScrollViewViewController: UIViewController, UIScrollViewDelegate {
         let w = scrollView.bounds.size.width
         let currentPage = Int(ceil(x/w))
         pageNum = currentPage
-        switch pageNum {
-        case 0:
-            mypageNum = true
-        case 1:
-            mypageNum = false
-        default:
-            mypageNum = false
-        }
     }
     
     func pinEdges(of viewA: UIView, to viewB: UIView) {
@@ -83,17 +73,5 @@ struct UIScrollViewWrapper<Content: View>: UIViewControllerRepresentable {
     
     func updateUIViewController(_ viewController: UIScrollViewViewController, context: Context) {
         viewController.hostingController.rootView = AnyView(self.content())
-    }
-    
-    func getPageNum() -> Bool {
-        let vc = UIScrollViewViewController()
-        switch vc.pageNum {
-        case 0:
-            return true
-        case 1:
-            return false
-        default:
-            return false
-        }
     }
 }

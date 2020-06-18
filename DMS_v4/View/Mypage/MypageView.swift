@@ -11,19 +11,20 @@ import Combine
 
 struct MypageView: View {
     
-    @State private var isFirst = mypageNum
+    @State var isPaged = false
+    @State var isLogouted = false
     
     var body: some View {
-        
-        return VStack {
+        VStack {
             GeometryReader { proxy in
                 UIScrollViewWrapper {
                     HStack {
                         MyPageFirstView()
                             .frame(width: proxy.size.width - 8, height: proxy.size.height)
-                        MypageSubView()
-                            .frame(width: proxy.size.width - 8, height: proxy.size.height)                    }
-                        .frame(width: proxy.size.width * 2, height: proxy.size.height)
+                        MypageSubView(isLoggedOut: self.$isLogouted)
+                            .frame(width: proxy.size.width - 8, height: proxy.size.height)
+                    }
+                    .frame(width: proxy.size.width * 2, height: proxy.size.height)
                 }
             }
             ZStack {
@@ -44,10 +45,28 @@ struct MypageView: View {
                     .frame(width: 8, height: 8)
                     .cornerRadius(4)
                     .padding(.vertical, 20)
-                    .offset(x: isFirst ? 8 : -8)
+                    .offset(x: isPaged ? 8 : -8)
                     .animation(.easeInOut)
             }
         }
+        .onAppear {
+            // self.getData()
+        }
+    }
+}
+
+extension MypageView {
+    func getData() {
+        _ = Connector.instance
+            .getRequest(InfoAPI.getApplyInfo, method: .get)
+            .decodeData(MypageModel.self)
+            .subscribe(onNext: { [self] code, str, data in
+                switch code{
+                case 200: print(code)
+                case 204: print(code)
+                default: print(code)
+                }
+            })
     }
 }
 
@@ -137,7 +156,7 @@ private struct MyPageFirstView: View {
             Image("icon_mypage")
                 .frame(width: 50, height: 50)
                 .padding(.top, 24)
-            Text("2학년 2반 11번 이동기")
+            Text("0학년 0반 00번 OOO")
                 .padding(.top, 24)
             CardView(lblTitle: "귀가상태", lblCondition: "토요 귀가")
                 .frame(minHeight: 0, maxHeight: .infinity)

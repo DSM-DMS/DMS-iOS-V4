@@ -57,7 +57,12 @@ public extension URLRequest{
             .map{ ($0.0.statusCode, $0.1) }
             .map{ (code, data) in
                 let str = String(decoding: data, as: UTF8.self)
-                let jsonSerialization = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                var jsonSerialization = [String: Any]()
+                if str == "" {
+                    jsonSerialization = ["": ""]
+                } else {
+                    jsonSerialization = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                }
                 
                 return (code, str, jsonSerialization)
             }

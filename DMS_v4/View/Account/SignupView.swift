@@ -106,19 +106,6 @@ struct SignupView: View {
                 
             }
             Spacer()
-            HStack {
-                Spacer()
-                ZStack {
-                    Circle()
-                        .foregroundColor(Color("CustomGreen"))
-                        .frame(width: 48, height: 48)
-                    Image(systemName: "arrow.right")
-                        .foregroundColor(Color.white)
-                        .frame(width: 16, height: 16)
-                }
-                .padding(.trailing, 24)
-                .padding(.bottom, 24)
-            }
         }
     }
 }

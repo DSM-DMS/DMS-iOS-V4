@@ -12,43 +12,53 @@ struct MypageSubView: View {
     
     @State var isTapped = [false, false, false, false, false]
     
+    @Binding var isLoggedOut: Bool
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("기타")
-                .font(Font.system(size: 30))
-                .fontWeight(.bold)
-                .foregroundColor(Color("CustomGreen"))
-                .padding(.top, 32)
-                .onAppear() {
-                    for i in 0...4 {
-                        self.isTapped[i] = false
-                    }
-            }
-            BackgroundView(image: "icon_change", description: "비밀번호 변경", details: "현재 계정의 비밀번호를 변경합니다.")
-                .frame(minHeight: 0, maxHeight: .infinity)
-                .onTapGesture {
-                    self.isTapped[0] = true
-            }
+        ZStack {
+            VStack(alignment: .leading) {
+                Text("기타")
+                    .font(Font.system(size: 30))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("CustomGreen"))
+                    .padding(.top, 32)
+                    .onAppear() {
+                        for i in 0...4 {
+                            self.isTapped[i] = false
+                        }
+                }
+                BackgroundView(image: "icon_change", description: "비밀번호 변경", details: "현재 계정의 비밀번호를 변경합니다.")
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                    .onTapGesture {
+                        self.isTapped[0] = true
+                }
                 .sheet(isPresented: $isTapped[0]) {
                     ChangePWView()
+                }
+                BackgroundView(image: "icon_bugreport", description: "버그 신고", details: "DMS 사용 중에 발견된 버그를 신고합니다.")
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                BackgroundView(image: "icon_point", description: "상벌점 내역", details: "상벌점 내역을 확인합니다.")
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                BackgroundView(image: "icon_logout", description: "로그아웃", details: "현재 계정에서 로그아웃을 합니다")
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                    .onTapGesture {
+                            self.isTapped[3] = true
+                    }
+                    .sheet(isPresented: $isTapped[3]) {
+                        SigninView()
+                    }
+                BackgroundView(image: "icon_notification", description: "공지사항", details: "기숙사의 공지사항을 확인합니다.")
+                    .frame(minHeight: 0, maxHeight: .infinity)
             }
-            BackgroundView(image: "icon_bugreport", description: "버그 신고", details: "DMS 사용 중에 발견된 버그를 신고합니다.")
-                .frame(minHeight: 0, maxHeight: .infinity)
-            BackgroundView(image: "icon_point", description: "상벌점 내역", details: "상벌점 내역을 확인합니다.")
-                .frame(minHeight: 0, maxHeight: .infinity)
-            BackgroundView(image: "icon_logout", description: "로그아웃", details: "현재 계정에서 로그아웃을 합니다")
-                .frame(minHeight: 0, maxHeight: .infinity)
-            BackgroundView(image: "icon_notification", description: "공지사항", details: "기숙사의 공지사항을 확인합니다.")
-                .frame(minHeight: 0, maxHeight: .infinity)
+            .padding(.horizontal,24)
+            .padding(.bottom, 10)
         }
-        .padding(.horizontal,24)
-        .padding(.bottom, 10)
     }
 }
 
 struct MypageSubView_Previews: PreviewProvider {
     static var previews: some View {
-        MypageSubView()
+        MypageSubView(isLoggedOut: .constant(false))
     }
 }
 

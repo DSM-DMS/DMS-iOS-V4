@@ -34,7 +34,7 @@ class Token{
     func get() -> AuthModel?{
         let accessToken = repo.string(forKey: accessKey)
         let refreshToken = repo.string(forKey: refreshKey)
-        if let at = accessToken, refreshToken != nil{ return AuthModel(accessToken: "JWT " + at, refreshToken: "JWT " + refreshToken!) }
+        if let at = accessToken, refreshToken != nil{ return AuthModel(accessToken: "Bearer " + at, refreshToken: "Bearer " + refreshToken!) }
         else{ return nil }
     }
     
