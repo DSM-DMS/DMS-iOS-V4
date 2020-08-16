@@ -44,3 +44,36 @@ struct AuthModel: Codable{
     let accessToken: String
     let refreshToken: String?
 }
+
+class Account {
+    static let instance = Account()
+    private let repo = UserDefaults.standard
+    private let ID = "ID"
+    private let PW = "PW"
+    private let autoSignIn = "Auto"
+    
+    private init(){}
+    
+    func agreeAutoSignIn(_ auto: Bool) {
+        repo.set(auto, forKey: autoSignIn)
+    }
+    
+    func getAgreement() -> Bool {
+        return repo.bool(forKey: autoSignIn)
+    }
+    
+    func save(_ id: String, _ pw: String) {
+        repo.set(id, forKey: ID)
+        repo.set(pw, forKey: PW)
+    }
+    
+    func get() -> [String?] {
+        let id = repo.string(forKey: ID)
+        let pw = repo.string(forKey: PW)
+        if let identifier = id, pw != nil {
+            return [identifier, pw]
+        } else {
+            return ["", ""]
+        }
+    }
+}

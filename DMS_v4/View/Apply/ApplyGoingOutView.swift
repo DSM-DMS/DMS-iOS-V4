@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ApplyGoingOutView: View {
     
@@ -14,6 +15,7 @@ struct ApplyGoingOutView: View {
     @State private var tappingTime = false
     @State private var tappingText = false
     @State private var txtWhere = ""
+    @State private var timeToGoOut = "13:00 ~ 21:30 (토요일)"
     @State private var monthCount = 0
     
     var rkManager1 = RKManager(calendar: Calendar.current, minimumDate: Date(), maximumDate: Date().addingTimeInterval(60*60*24*365), mode: 0)
@@ -23,60 +25,63 @@ struct ApplyGoingOutView: View {
     var locationToGoout: String = ""
     
     var body: some View {
-        VStack {
-            Image("icon_outdoor_big")
-                .padding(.top, 36)
-                .padding(.bottom, 4)
-            Text("외출 신청")
-                .fontWeight(.bold)
-                .font(Font.system(size: 18))
-                .padding(.bottom, 20)
-                .frame(width: 80)
-            Text("주말 외출 및 평일 외출을 신청할 수 있습니다.")
-                .fontWeight(.light)
-                .font(Font.system(size: 14))
-                .padding(.bottom, 56)
-            TextView(beforeImage: "icon_date", afterImage: "icon_date_green", placeholder: self.getTextFromDate(date: self.rkManager1.selectedDate), colorName: tappingDate ? "CustomGreen" : "CustomBlack", imageOpacity: tappingDate ? 1 : 0)
-                .gesture(
-                    TapGesture()
-                        .onEnded { _ in
-                            self.tappingDate.toggle()
-                            self.tappingTime = false
-                    }
-            )
-                .frame(height: 50)
-            SubCalendarView(isPresented: self.$tappingDate, monthCount: $monthCount, rkManager: self.rkManager1)
-                .frame(height: tappingDate ? 230 : -16)
-                .opacity(tappingDate ? 1 : 0)
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-            TextView(beforeImage: "icon_time", afterImage: "icon_time_green", placeholder: "PM 12 : 30 ~ PM 20 : 30", selfNum: 0, colorName: tappingTime ? "CustomGreen" : "CustomBlack", imageOpacity: tappingTime ? 1 : 0)
-                .gesture(
-                    TapGesture()
-                        .onEnded { _ in
-                            self.tappingTime.toggle()
-                    }
-            )
-                .opacity(tappingDate ? 0 : 1)
-                .frame(height: tappingDate ? 0 : 50)
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-            SetTimeView(isPresented: self.$tappingTime)
-                .frame(height: tappingTime ? 230 : -16)
-                .opacity(tappingTime ? 1 : 0)
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-            EditView(txtWhere: $txtWhere, tappingText: $tappingText, beforeImage: "icon_place", afterImage: "icon_place_green", placeholder: "행선지를 입력해주세요", selfNum: 0, colorName: tappingText ? "CustomGreen" : "CustomBlack", imageOpacity: tappingText ? 1 : 0)
-                .opacity(tappingDate || tappingTime ? 0 : 1)
-                .frame(height: tappingTime || tappingDate ? 0 : 50)
-                .gesture(
-                    TapGesture()
-                        .onEnded { _ in
-                            self.tappingText = true
-                    }
-            )
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+        ZStack {
             
-            Spacer()
-            
-            ButtomButton(buttonText: "신청")
+            VStack {
+                Image("icon_outdoor_big")
+                    .padding(.top, 36)
+                    .padding(.bottom, 4)
+                Text("외출 신청")
+                    .fontWeight(.bold)
+                    .font(Font.system(size: 18))
+                    .padding(.bottom, 20)
+                    .frame(width: 80)
+                Text("주말 외출을 신청할 수 있습니다.")
+                    .fontWeight(.light)
+                    .font(Font.system(size: 14))
+                    .padding(.bottom, 56)
+                TextView(beforeImage: "icon_date", afterImage: "icon_date_green", placeholder: self.getTextFromDate(date: self.rkManager1.selectedDate), colorName: tappingDate ? "CustomGreen" : "CustomBlack", imageOpacity: tappingDate ? 1 : 0)
+                    .gesture(
+                        TapGesture()
+                            .onEnded { _ in
+                                self.tappingDate.toggle()
+                                self.tappingTime = false
+                        }
+                )
+                    .frame(height: 50)
+                SubCalendarView(isPresented: self.$tappingDate, monthCount: $monthCount, rkManager: self.rkManager1)
+                    .frame(height: tappingDate ? 230 : -16)
+                    .opacity(tappingDate ? 1 : 0)
+                    .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.6))
+                TextView(beforeImage: "icon_time", afterImage: "icon_time_green", placeholder: timeToGoOut, selfNum: 0, colorName: tappingTime ? "CustomGreen" : "CustomBlack", imageOpacity: tappingTime ? 1 : 0)
+                    .gesture(
+                        TapGesture()
+                            .onEnded { _ in
+                                self.tappingTime.toggle()
+                        }
+                )
+                    .opacity(tappingDate ? 0 : 1)
+                    .frame(height: tappingDate ? 0 : 50)
+                    .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.6))
+                SetTimeView(isPresented: self.$tappingTime, timeToGoOut: self.$timeToGoOut)
+                    .frame(height: tappingTime ? 230 : -8)
+                    .opacity(tappingTime ? 1 : 0)
+                    .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.6))
+                EditView(txtWhere: $txtWhere, tappingText: $tappingText, beforeImage: "icon_place", afterImage: "icon_place_green", placeholder: "행선지를 입력해주세요", selfNum: 0, colorName: tappingText ? "CustomGreen" : "CustomBlack", imageOpacity: tappingText ? 1 : 0)
+                    .opacity(tappingDate || tappingTime ? 0 : 1)
+                    .frame(height: tappingTime || tappingDate ? 0 : 50)
+                    .gesture(
+                        TapGesture()
+                            .onEnded { _ in
+                                self.tappingText = true
+                        }
+                )
+                    .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.6))
+                
+                Spacer()
+                
+                BottomButton(buttonText: "신청")
+            }
         }
     }
 }
@@ -300,112 +305,48 @@ private struct SubCalendarView: View {
 private struct SetTimeView: View {
     
     @Binding var isPresented: Bool
+    @Binding var timeToGoOut: String
     
     var body: some View {
         VStack {
-            HStack {
-                VStack {
-                    Text("출발시간")
+            Group {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(Color("CustomWhite"))
+                        .cornerRadius(15)
+                        .shadow(color: Color("CustomShadow"), radius: 3, x: 0, y: 3)
+                    Text("09:00 ~ 12:00")
                         .font(.system(size: 14))
-                    HStack() {
-                        Text("12:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("13:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 14)
-                    HStack() {
-                        Text("14:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("15:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
-                    HStack() {
-                        Text("16:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("17:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
-                    HStack() {
-                        Text("18:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("19:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
-                    HStack() {
-                        Text("20:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("21:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
                 }
-                Spacer()
-                    .frame(width: 40)
-                VStack {
-                    Text("귀사시간")
-                        .font(.system(size: 14))
-                    HStack() {
-                        Text("12:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("13:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 14)
-                    HStack() {
-                        Text("14:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("15:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
-                    HStack() {
-                        Text("16:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("17:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
-                    HStack() {
-                        Text("18:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("19:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
-                    HStack() {
-                        Text("20:00")
-                            .font(.system(size: 14))
-                        Spacer()
-                            .frame(width: 20)
-                        Text("21:00")
-                            .font(.system(size: 14))
-                    }
-                    .padding(.top, 10)
+                .onTapGesture {
+                    self.timeToGoOut = "09:00 ~ 12:00"
+                }
+                ZStack {
+                    Rectangle()
+                    .foregroundColor(Color("CustomWhite"))
+                    .cornerRadius(15)
+                    .shadow(color: Color("CustomShadow"), radius: 3, x: 0, y: 3)
+                    Text("13:00 ~ 21:30 (토요일)")
+                    .font(.system(size: 14))
+                }
+                .onTapGesture {
+                    self.timeToGoOut = "13:00 ~ 21:30 (토요일)"
+                }
+                ZStack {
+                    Rectangle()
+                    .foregroundColor(Color("CustomWhite"))
+                    .cornerRadius(15)
+                    .shadow(color: Color("CustomShadow"), radius: 3, x: 0, y: 3)
+                    Text("13:00 ~ 17:30 (일요일)")
+                    .font(.system(size: 14))
+                }
+                .onTapGesture {
+                    self.timeToGoOut = "13:00 ~ 17:30 (일요일)"
                 }
             }
-            Spacer()
+            .frame(height: 78)
+            .padding(.horizontal, 26)
+            .padding(.top, 15)
         }
     }
 }
@@ -421,7 +362,7 @@ struct SubCalendarView_Previews: PreviewProvider {
 
 struct SetTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        SetTimeView(isPresented: .constant(false))
+        SetTimeView(isPresented: .constant(false), timeToGoOut: .constant("13:00 ~ 17:30 (일요일)"))
             .previewLayout(.fixed(width: 350, height: 246))
     }
     

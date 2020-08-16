@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct ApplyMusicView: View {
-    @State private var original = ["", ""]
+    @State private var numOfBookedMusic = [0, 0, 0, 0, 0]
+    @State private var isTapped = [false, false, false, false, false]
     @State private var editingOriginal = [false, false]
     
     var body: some View {
@@ -31,12 +32,41 @@ struct ApplyMusicView: View {
                 .padding(.top, 24)
                 .padding(.bottom, 36)
             ButtonView(dayName: "월요일", numOfMusic: "0")
+                .onTapGesture {
+                        self.isTapped[0] = true
+                }
+                .sheet(isPresented: $isTapped[0]) {
+                    ApplyMusicDetailView(dayName: "월요일")
+                }
             ButtonView(dayName: "화요일", numOfMusic: "0")
+            .onTapGesture {
+                    self.isTapped[1] = true
+            }
+            .sheet(isPresented: $isTapped[1]) {
+                ApplyMusicDetailView(dayName: "화요일")
+            }
             ButtonView(dayName: "수요일", numOfMusic: "0")
+            .onTapGesture {
+                    self.isTapped[2] = true
+            }
+            .sheet(isPresented: $isTapped[2]) {
+                ApplyMusicDetailView(dayName: "수요일")
+            }
             ButtonView(dayName: "목요일", numOfMusic: "0")
+            .onTapGesture {
+                    self.isTapped[3] = true
+            }
+            .sheet(isPresented: $isTapped[3]) {
+                ApplyMusicDetailView(dayName: "목요일")
+            }
             ButtonView(dayName: "금요일", numOfMusic: "0")
+            .onTapGesture {
+                    self.isTapped[4] = true
+            }
+            .sheet(isPresented: $isTapped[4]) {
+                ApplyMusicDetailView(dayName: "금요일")
+            }
             Spacer()
-            ButtomButton(buttonText: "신청")
         }
     }
 }

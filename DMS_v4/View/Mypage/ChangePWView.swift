@@ -26,7 +26,7 @@ struct ChangePWView: View {
                     TextView(original: $original[1], editingOriginal: $editingOriginal[1], beforeImage: "icon_check", afterImage: "icon_check_green", placeholder: "변경할 비밀번호를 입력해주세요", selfNum: 1)
                     TextView(original: $original[2], editingOriginal: $editingOriginal[2], beforeImage: "icon_change_black", afterImage: "icon_change_green", placeholder: "변경할 비밀번호를 다시 입력해주세요", selfNum: 2)
                 }
-                ButtomButton(buttonText: "변경")
+                BottomButton(buttonText: "변경")
             }
         }
     }
@@ -83,7 +83,7 @@ private struct TextView: View {
     }
 }
 
-struct ButtomButton: View {
+struct BottomButton: View {
     var buttonText = ""
     
     var body: some View {

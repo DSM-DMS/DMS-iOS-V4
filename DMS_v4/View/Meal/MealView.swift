@@ -11,8 +11,11 @@ import RxSwift
 
 struct MealView: View {
     
+    @State var show = false
+    @State var viewState = CGSize.zero
     @State var mealDate = Date()
     @State var mealArr = ["불러오는 중...", "불러오는 중...", "불러오는 중..."]
+    @State var curPage = 0
     
     var txtDate = "2019년 8월 31일 목요일"
     let formatter = DateFormatter()
@@ -41,9 +44,49 @@ struct MealView: View {
                         .foregroundColor(Color("CustomBlack"))
                 }
             }
-            MealContentsView(mealArray: $mealArr)
-                .frame(minHeight: 0, maxHeight: .infinity)
-                .padding(.top, 20)
+            VStack(alignment: .hCenterred) {
+                HStack() {
+                    MealContentsView(mealArray: $mealArr)
+                        .frame(minWidth: UIScreen.screenWidth - 6, maxWidth: UIScreen.screenWidth - 6, minHeight: 0, maxHeight: .infinity)
+                    .padding(.top, 20)
+                    .alignmentGuide(.hCenterred, computeValue: { $0.width / 2.0 })
+                    MealContentsView(mealArray: $mealArr)
+                    .frame(minWidth: UIScreen.screenWidth - 6, maxWidth: UIScreen.screenWidth - 6, minHeight: 0, maxHeight: .infinity)
+                    .padding(.top, 20)
+                    MealContentsView(mealArray: $mealArr)
+                    .frame(minWidth: UIScreen.screenWidth - 6, maxWidth: UIScreen.screenWidth - 6, minHeight: 0, maxHeight: .infinity)
+                    .padding(.top, 20)
+                }
+                .offset(x: viewState.width)
+                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+            }
+            .frame(maxWidth: .infinity, alignment: Alignment(horizontal: .hCenterred, vertical: .center))
+            .gesture(
+                DragGesture().onChanged { value in
+                    self.viewState.width = value.translation.width - (CGFloat(self.curPage) * UIScreen.screenWidth)
+                    self.show = true
+                }
+                .onEnded { value in
+                    if value.translation.width > UIScreen.screenWidth / 2 {
+                        self.curPage -= 1
+                        if self.curPage < 0 {
+                            self.curPage = 0
+                        } else {
+                            self.mealDate = self.mealDate.addingTimeInterval(-60 * 60 * 24)
+                        }
+                        self.viewState.width = -(CGFloat(self.curPage) * UIScreen.screenWidth)
+                        self.show = false
+                    } else if value.translation.width < -UIScreen.screenWidth / 2 {
+                        self.curPage += 1
+                        self.mealDate = self.mealDate.addingTimeInterval(60 * 60 * 24)
+                        self.viewState.width = -(CGFloat(self.curPage) * UIScreen.screenWidth)
+                        self.show = false
+                    } else {
+                        self.viewState.width = -CGFloat(self.curPage) * UIScreen.screenWidth
+                    }
+                    
+                }
+            )
         }
         .onAppear {
             self.getData()
@@ -114,4 +157,13 @@ struct MealView_Previews: PreviewProvider {
     static var previews: some View {
         MealView()
     }
+}
+
+extension HorizontalAlignment {
+   private enum HCenterAlignment: AlignmentID {
+      static func defaultValue(in dimensions: ViewDimensions) -> CGFloat {
+         return dimensions[HorizontalAlignment.center]
+      }
+   }
+   static let hCenterred = HorizontalAlignment(HCenterAlignment.self)
 }

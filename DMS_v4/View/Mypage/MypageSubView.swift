@@ -42,11 +42,17 @@ struct MypageSubView: View {
                 BackgroundView(image: "icon_logout", description: "로그아웃", details: "현재 계정에서 로그아웃을 합니다")
                     .frame(minHeight: 0, maxHeight: .infinity)
                     .onTapGesture {
-                            self.isTapped[3] = true
+                        self.isTapped[3] = true
                     }
-                    .sheet(isPresented: $isTapped[3]) {
-                        SigninView()
-                    }
+                .alert(isPresented: $isTapped[3]) {
+                    Alert(title: Text("로그아웃"), message: Text("정말 로그아웃 하시겠습니까?"), primaryButton: .default(Text("확인"), action: {
+                        Token.instance.remove()
+                        self.isLoggedOut = true
+                    }), secondaryButton: .cancel())
+                }
+                .sheet(isPresented: $isLoggedOut) {
+                    SigninView()
+                }
                 BackgroundView(image: "icon_notification", description: "공지사항", details: "기숙사의 공지사항을 확인합니다.")
                     .frame(minHeight: 0, maxHeight: .infinity)
             }

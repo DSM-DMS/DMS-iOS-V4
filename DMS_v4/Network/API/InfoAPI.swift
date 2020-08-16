@@ -10,11 +10,14 @@ import Foundation
 
 public enum InfoAPI: API {
     case getApplyInfo
+    case getBasicInfo
     
     func getPath() -> String {
         switch self {
         case .getApplyInfo:
             return "info/apply"
+        case .getBasicInfo:
+            return "info/basic"
         }
     }
 }

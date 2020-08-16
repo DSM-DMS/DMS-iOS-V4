@@ -12,6 +12,8 @@ struct ConfirmationView: View {
     @State private var code: String = ""
     @State private var editingCode = false
     
+    @Binding var isConfirmed: Bool
+    
     let message = ""
     
     var body: some View {
@@ -28,19 +30,17 @@ struct ConfirmationView: View {
             VStack {
                 HStack {
                     ZStack {
-                        Image("icon_code")
+                        Image(systemName: "creditcard")
                             .frame(width: 24, height: 16)
-                            .animation(.easeInOut)
-                        Image("icon_code_light")
-                            .frame(width: 24, height: 16)
-                            .animation(.easeInOut)
-                            .opacity(editingCode ? 1 : 0)
+                        .foregroundColor(Color("CustomText"))
                     }
                     
                     SecureField("확인코드를입력해주세요", text: $code)
                         .font(Font.system(size: 12))
-                        .foregroundColor(Color(ColorToUse.getColor(.Black700)()))
-                    Button("인증") {}
+                        .foregroundColor(Color("CustomText"))
+                    Button("인증") {
+                        self.isConfirmed.toggle()
+                    }
                         .foregroundColor(Color.white)
                         .font(Font.system(size: 10))
                         .frame(width: 36, height: 18)
@@ -51,10 +51,9 @@ struct ConfirmationView: View {
                 .padding(.top, 60)
                 Rectangle()
                     .frame(height: editingCode ? 2 : 1)
-                    .foregroundColor(editingCode ? Color("CustomGreen") : Color(ColorToUse.getColor(.Black700)()))
+                    .foregroundColor(editingCode ? Color("CustomGreen") : Color("CustomText"))
                     .padding(.horizontal, 26)
                     .padding(.top, -4)
-                    .animation(.easeInOut)
                 HStack {
                     Text(message)
                         .font(Font.system(size: 12))
@@ -71,7 +70,7 @@ struct ConfirmationView: View {
 
 struct ConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView()
+        ConfirmationView(isConfirmed: .constant(false))
     }
 }
 

@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct CalendarView: View {
-    
+
     @State private var monthCount = 0
     @State private var showCalendar = true
-    
+
     var rkManager = RKManager(calendar: Calendar.current, minimumDate: Date().addingTimeInterval(-60*60*24*365), maximumDate: Date().addingTimeInterval(60*60*24*365), mode: 0)
-    
+
     var body: some View {
         VStack {
             Spacer()
@@ -31,7 +31,6 @@ struct DatePlan: Identifiable {
     var planName: String
     var planPlace: String
 }
-
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
