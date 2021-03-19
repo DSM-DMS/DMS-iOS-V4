@@ -3,23 +3,142 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		479B80542600804B005AA267 /* DMS_for_DSM_V4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80532600804B005AA267 /* DMS_for_DSM_V4App.swift */; };
-		479B80562600804B005AA267 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80552600804B005AA267 /* ContentView.swift */; };
 		479B80582600804D005AA267 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479B80572600804D005AA267 /* Assets.xcassets */; };
 		479B805B2600804D005AA267 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479B805A2600804D005AA267 /* Preview Assets.xcassets */; };
+		479B80CF260422D2005AA267 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479B80CE260422D2005AA267 /* Launch Screen.storyboard */; };
+		479B80D526042305005AA267 /* NanumSquareB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 479B80D2260422F5005AA267 /* NanumSquareB.otf */; };
+		479B80D626042305005AA267 /* NanumSquareEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 479B80D3260422F5005AA267 /* NanumSquareEB.otf */; };
+		479B80D726042305005AA267 /* NanumSquareL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 479B80D1260422F4005AA267 /* NanumSquareL.otf */; };
+		479B80D826042305005AA267 /* NanumSquareR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 479B80D4260422F5005AA267 /* NanumSquareR.otf */; };
+		479B80E426042619005AA267 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80E326042619005AA267 /* CalendarCell.swift */; };
+		479B80E726042645005AA267 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80E626042645005AA267 /* CalendarDate.swift */; };
+		479B80EA26042664005AA267 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80E926042663005AA267 /* CalendarManager.swift */; };
+		479B80ED26042682005AA267 /* CalendarColorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80EC26042682005AA267 /* CalendarColorSetting.swift */; };
+		479B80F0260426B8005AA267 /* CalendarMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80EF260426B8005AA267 /* CalendarMonth.swift */; };
+		479B80F4260429CB005AA267 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80F3260429CB005AA267 /* APIProtocol.swift */; };
+		479B80F8260429E3005AA267 /* MealApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80F7260429E3005AA267 /* MealApi.swift */; };
+		479B80FB260429F4005AA267 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80FA260429F4005AA267 /* AuthAPI.swift */; };
+		479B80FE26042B93005AA267 /* InfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B80FD26042B93005AA267 /* InfoAPI.swift */; };
+		479B810126042C7E005AA267 /* ApplyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B810026042C7E005AA267 /* ApplyAPI.swift */; };
+		479B810426042C9D005AA267 /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B810326042C9D005AA267 /* Connector.swift */; };
+		479B810C26042CBF005AA267 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B810726042CBF005AA267 /* Base.swift */; };
+		479B810D26042CBF005AA267 /* KeyBoardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B810826042CBF005AA267 /* KeyBoardGuardian.swift */; };
+		479B810E26042CBF005AA267 /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B810926042CBF005AA267 /* Toaster.swift */; };
+		479B810F26042CBF005AA267 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B810A26042CBF005AA267 /* Token.swift */; };
+		479B811026042CBF005AA267 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B810B26042CBF005AA267 /* Color.swift */; };
+		479B813226042CD0005AA267 /* ApplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811426042CD0005AA267 /* ApplyView.swift */; };
+		479B813326042CD0005AA267 /* ApplyExtensionDetailUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811526042CD0005AA267 /* ApplyExtensionDetailUIKitView.swift */; };
+		479B813426042CD0005AA267 /* ApplyExtensionDetailUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479B811626042CD0005AA267 /* ApplyExtensionDetailUI.storyboard */; };
+		479B813526042CD0005AA267 /* ApplyMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811726042CD0005AA267 /* ApplyMusicView.swift */; };
+		479B813626042CD0005AA267 /* ApplyMusicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811826042CD0005AA267 /* ApplyMusicDetailView.swift */; };
+		479B813726042CD0005AA267 /* ApplyExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811926042CD0005AA267 /* ApplyExtensionView.swift */; };
+		479B813826042CD0005AA267 /* ApplySundayRestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811A26042CD0005AA267 /* ApplySundayRestView.swift */; };
+		479B813926042CD0005AA267 /* ApplyExtensionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811B26042CD0005AA267 /* ApplyExtensionDetailView.swift */; };
+		479B813A26042CD0005AA267 /* ApplyGoingOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811C26042CD0005AA267 /* ApplyGoingOutView.swift */; };
+		479B813B26042CD0005AA267 /* ApplyGoingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811D26042CD0005AA267 /* ApplyGoingHomeView.swift */; };
+		479B813C26042CD0005AA267 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B811F26042CD0005AA267 /* CalendarView.swift */; };
+		479B813D26042CD0005AA267 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812126042CD0005AA267 /* ChatView.swift */; };
+		479B813E26042CD0005AA267 /* MypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812326042CD0005AA267 /* MypageModel.swift */; };
+		479B813F26042CD0005AA267 /* MypageSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812426042CD0005AA267 /* MypageSubView.swift */; };
+		479B814026042CD0005AA267 /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812526042CD0005AA267 /* MypageView.swift */; };
+		479B814126042CD0005AA267 /* ChangePWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812626042CD0005AA267 /* ChangePWView.swift */; };
+		479B814226042CD0005AA267 /* MealContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812826042CD0005AA267 /* MealContentsView.swift */; };
+		479B814326042CD0005AA267 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812926042CD0005AA267 /* MealModel.swift */; };
+		479B814426042CD0005AA267 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812A26042CD0005AA267 /* MealView.swift */; };
+		479B814526042CD0005AA267 /* SignupCollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812C26042CD0005AA267 /* SignupCollectView.swift */; };
+		479B814626042CD0005AA267 /* SinginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812D26042CD0005AA267 /* SinginView.swift */; };
+		479B814726042CD0005AA267 /* SigupSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812E26042CD0005AA267 /* SigupSuccessView.swift */; };
+		479B814826042CD0005AA267 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B812F26042CD0005AA267 /* SignupView.swift */; };
+		479B814926042CD0005AA267 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B813026042CD0005AA267 /* ConfirmationView.swift */; };
+		479B814A26042CD0005AA267 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B813126042CD0005AA267 /* ContentView.swift */; };
+		E46ED785ED39434AACBA82FF /* Pods_DMS_for_DSM_V4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8C041CD1F2049BA2520BDA /* Pods_DMS_for_DSM_V4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		479B80502600804B005AA267 /* DMS for DSM V4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMS for DSM V4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		479B80532600804B005AA267 /* DMS_for_DSM_V4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMS_for_DSM_V4App.swift; sourceTree = "<group>"; };
-		479B80552600804B005AA267 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		479B80572600804D005AA267 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		479B805A2600804D005AA267 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		479B805C2600804D005AA267 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		479B80CE260422D2005AA267 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		479B80D1260422F4005AA267 /* NanumSquareL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareL.otf; sourceTree = "<group>"; };
+		479B80D2260422F5005AA267 /* NanumSquareB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareB.otf; sourceTree = "<group>"; };
+		479B80D3260422F5005AA267 /* NanumSquareEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.otf; sourceTree = "<group>"; };
+		479B80D4260422F5005AA267 /* NanumSquareR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareR.otf; sourceTree = "<group>"; };
+		479B80E326042619005AA267 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		479B80E626042645005AA267 /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
+		479B80E926042663005AA267 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		479B80EC26042682005AA267 /* CalendarColorSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarColorSetting.swift; sourceTree = "<group>"; };
+		479B80EF260426B8005AA267 /* CalendarMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonth.swift; sourceTree = "<group>"; };
+		479B80F3260429CB005AA267 /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
+		479B80F7260429E3005AA267 /* MealApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApi.swift; sourceTree = "<group>"; };
+		479B80FA260429F4005AA267 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		479B80FD26042B93005AA267 /* InfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAPI.swift; sourceTree = "<group>"; };
+		479B810026042C7E005AA267 /* ApplyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyAPI.swift; sourceTree = "<group>"; };
+		479B810326042C9D005AA267 /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
+		479B810726042CBF005AA267 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		479B810826042CBF005AA267 /* KeyBoardGuardian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardGuardian.swift; sourceTree = "<group>"; };
+		479B810926042CBF005AA267 /* Toaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
+		479B810A26042CBF005AA267 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		479B810B26042CBF005AA267 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		479B811426042CD0005AA267 /* ApplyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyView.swift; sourceTree = "<group>"; };
+		479B811526042CD0005AA267 /* ApplyExtensionDetailUIKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyExtensionDetailUIKitView.swift; sourceTree = "<group>"; };
+		479B811626042CD0005AA267 /* ApplyExtensionDetailUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApplyExtensionDetailUI.storyboard; sourceTree = "<group>"; };
+		479B811726042CD0005AA267 /* ApplyMusicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyMusicView.swift; sourceTree = "<group>"; };
+		479B811826042CD0005AA267 /* ApplyMusicDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyMusicDetailView.swift; sourceTree = "<group>"; };
+		479B811926042CD0005AA267 /* ApplyExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyExtensionView.swift; sourceTree = "<group>"; };
+		479B811A26042CD0005AA267 /* ApplySundayRestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplySundayRestView.swift; sourceTree = "<group>"; };
+		479B811B26042CD0005AA267 /* ApplyExtensionDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyExtensionDetailView.swift; sourceTree = "<group>"; };
+		479B811C26042CD0005AA267 /* ApplyGoingOutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyGoingOutView.swift; sourceTree = "<group>"; };
+		479B811D26042CD0005AA267 /* ApplyGoingHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyGoingHomeView.swift; sourceTree = "<group>"; };
+		479B811F26042CD0005AA267 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		479B812126042CD0005AA267 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		479B812326042CD0005AA267 /* MypageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
+		479B812426042CD0005AA267 /* MypageSubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageSubView.swift; sourceTree = "<group>"; };
+		479B812526042CD0005AA267 /* MypageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
+		479B812626042CD0005AA267 /* ChangePWView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePWView.swift; sourceTree = "<group>"; };
+		479B812826042CD0005AA267 /* MealContentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealContentsView.swift; sourceTree = "<group>"; };
+		479B812926042CD0005AA267 /* MealModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
+		479B812A26042CD0005AA267 /* MealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		479B812C26042CD0005AA267 /* SignupCollectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCollectView.swift; sourceTree = "<group>"; };
+		479B812D26042CD0005AA267 /* SinginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinginView.swift; sourceTree = "<group>"; };
+		479B812E26042CD0005AA267 /* SigupSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigupSuccessView.swift; sourceTree = "<group>"; };
+		479B812F26042CD0005AA267 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		479B813026042CD0005AA267 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		479B813126042CD0005AA267 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		479B814E26042CE7005AA267 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		479B815026042CE7005AA267 /* ChangePWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePWView.swift; sourceTree = "<group>"; };
+		479B815126042CE7005AA267 /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
+		479B815226042CE7005AA267 /* MypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
+		479B815326042CE7005AA267 /* MypageSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageSubView.swift; sourceTree = "<group>"; };
+		479B815526042CE8005AA267 /* ApplyMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyMusicView.swift; sourceTree = "<group>"; };
+		479B815626042CE8005AA267 /* ApplyMusicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyMusicDetailView.swift; sourceTree = "<group>"; };
+		479B815726042CE8005AA267 /* ApplySundayRestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplySundayRestView.swift; sourceTree = "<group>"; };
+		479B815826042CE8005AA267 /* ApplyExtensionDetailUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApplyExtensionDetailUI.storyboard; sourceTree = "<group>"; };
+		479B815926042CE9005AA267 /* ApplyExtensionDetailUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyExtensionDetailUIKitView.swift; sourceTree = "<group>"; };
+		479B815A26042CE9005AA267 /* ApplyExtensionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyExtensionDetailView.swift; sourceTree = "<group>"; };
+		479B815B26042CE9005AA267 /* ApplyExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyExtensionView.swift; sourceTree = "<group>"; };
+		479B815C26042CE9005AA267 /* ApplyGoingOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyGoingOutView.swift; sourceTree = "<group>"; };
+		479B815D26042CE9005AA267 /* ApplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyView.swift; sourceTree = "<group>"; };
+		479B815E26042CEA005AA267 /* ApplyGoingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyGoingHomeView.swift; sourceTree = "<group>"; };
+		479B816026042CEA005AA267 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		479B816126042CEA005AA267 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		479B816226042CEA005AA267 /* SigupSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigupSuccessView.swift; sourceTree = "<group>"; };
+		479B816326042CEA005AA267 /* SinginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinginView.swift; sourceTree = "<group>"; };
+		479B816426042CEB005AA267 /* SignupCollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCollectView.swift; sourceTree = "<group>"; };
+		479B816626042CEB005AA267 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		479B816826042CEB005AA267 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		479B816A26042CEB005AA267 /* MealContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealContentsView.swift; sourceTree = "<group>"; };
+		479B816B26042CEB005AA267 /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
+		479B816C26042CEC005AA267 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		7C8C041CD1F2049BA2520BDA /* Pods_DMS_for_DSM_V4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMS_for_DSM_V4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5A030A4F678720D6A69E8EB /* Pods-DMS for DSM V4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMS for DSM V4.release.xcconfig"; path = "Target Support Files/Pods-DMS for DSM V4/Pods-DMS for DSM V4.release.xcconfig"; sourceTree = "<group>"; };
+		DC3BD691C6E7BEB5ECE3B637 /* Pods-DMS for DSM V4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMS for DSM V4.debug.xcconfig"; path = "Target Support Files/Pods-DMS for DSM V4/Pods-DMS for DSM V4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46ED785ED39434AACBA82FF /* Pods_DMS_for_DSM_V4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +158,8 @@
 			children = (
 				479B80522600804B005AA267 /* DMS for DSM V4 */,
 				479B80512600804B005AA267 /* Products */,
+				E0CA3C75266A746A69FCBCF9 /* Pods */,
+				4F9A9ED92A87E41CCABC60C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,9 +174,12 @@
 		479B80522600804B005AA267 /* DMS for DSM V4 */ = {
 			isa = PBXGroup;
 			children = (
-				479B80532600804B005AA267 /* DMS_for_DSM_V4App.swift */,
-				479B80552600804B005AA267 /* ContentView.swift */,
-				479B80572600804D005AA267 /* Assets.xcassets */,
+				479B80C9260420E0005AA267 /* Fonts */,
+				479B80CA260420EE005AA267 /* Calendar */,
+				479B80CB260420FD005AA267 /* Network */,
+				479B810626042CBF005AA267 /* Util */,
+				479B814D26042CE6005AA267 /* View */,
+				479B80E026042531005AA267 /* Support */,
 				479B805C2600804D005AA267 /* Info.plist */,
 				479B80592600804D005AA267 /* Preview Content */,
 			);
@@ -69,6 +194,252 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		479B80C9260420E0005AA267 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				479B80D2260422F5005AA267 /* NanumSquareB.otf */,
+				479B80D3260422F5005AA267 /* NanumSquareEB.otf */,
+				479B80D1260422F4005AA267 /* NanumSquareL.otf */,
+				479B80D4260422F5005AA267 /* NanumSquareR.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		479B80CA260420EE005AA267 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				479B80E326042619005AA267 /* CalendarCell.swift */,
+				479B80E626042645005AA267 /* CalendarDate.swift */,
+				479B80E926042663005AA267 /* CalendarManager.swift */,
+				479B80EC26042682005AA267 /* CalendarColorSetting.swift */,
+				479B80EF260426B8005AA267 /* CalendarMonth.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		479B80CB260420FD005AA267 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				479B80F2260429B6005AA267 /* Api */,
+				479B810326042C9D005AA267 /* Connector.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		479B80E026042531005AA267 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				479B80572600804D005AA267 /* Assets.xcassets */,
+				479B80CE260422D2005AA267 /* Launch Screen.storyboard */,
+				479B80532600804B005AA267 /* DMS_for_DSM_V4App.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		479B80F2260429B6005AA267 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				479B80F3260429CB005AA267 /* APIProtocol.swift */,
+				479B80F7260429E3005AA267 /* MealApi.swift */,
+				479B80FA260429F4005AA267 /* AuthAPI.swift */,
+				479B80FD26042B93005AA267 /* InfoAPI.swift */,
+				479B810026042C7E005AA267 /* ApplyAPI.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		479B810626042CBF005AA267 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				479B811226042CD0005AA267 /* View */,
+				479B810726042CBF005AA267 /* Base.swift */,
+				479B810826042CBF005AA267 /* KeyBoardGuardian.swift */,
+				479B810926042CBF005AA267 /* Toaster.swift */,
+				479B810A26042CBF005AA267 /* Token.swift */,
+				479B810B26042CBF005AA267 /* Color.swift */,
+			);
+			name = Util;
+			path = "../../DMS-iOS-V4/DMS_v4/Util";
+			sourceTree = "<group>";
+		};
+		479B811226042CD0005AA267 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				479B811326042CD0005AA267 /* Apply */,
+				479B811E26042CD0005AA267 /* Calendar */,
+				479B812026042CD0005AA267 /* Chat */,
+				479B812226042CD0005AA267 /* Mypage */,
+				479B812726042CD0005AA267 /* Meal */,
+				479B812B26042CD0005AA267 /* Account */,
+				479B813126042CD0005AA267 /* ContentView.swift */,
+			);
+			name = View;
+			path = ../View;
+			sourceTree = "<group>";
+		};
+		479B811326042CD0005AA267 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				479B811426042CD0005AA267 /* ApplyView.swift */,
+				479B811526042CD0005AA267 /* ApplyExtensionDetailUIKitView.swift */,
+				479B811626042CD0005AA267 /* ApplyExtensionDetailUI.storyboard */,
+				479B811726042CD0005AA267 /* ApplyMusicView.swift */,
+				479B811826042CD0005AA267 /* ApplyMusicDetailView.swift */,
+				479B811926042CD0005AA267 /* ApplyExtensionView.swift */,
+				479B811A26042CD0005AA267 /* ApplySundayRestView.swift */,
+				479B811B26042CD0005AA267 /* ApplyExtensionDetailView.swift */,
+				479B811C26042CD0005AA267 /* ApplyGoingOutView.swift */,
+				479B811D26042CD0005AA267 /* ApplyGoingHomeView.swift */,
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
+		479B811E26042CD0005AA267 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				479B811F26042CD0005AA267 /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		479B812026042CD0005AA267 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				479B812126042CD0005AA267 /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		479B812226042CD0005AA267 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				479B812326042CD0005AA267 /* MypageModel.swift */,
+				479B812426042CD0005AA267 /* MypageSubView.swift */,
+				479B812526042CD0005AA267 /* MypageView.swift */,
+				479B812626042CD0005AA267 /* ChangePWView.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		479B812726042CD0005AA267 /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				479B812826042CD0005AA267 /* MealContentsView.swift */,
+				479B812926042CD0005AA267 /* MealModel.swift */,
+				479B812A26042CD0005AA267 /* MealView.swift */,
+			);
+			path = Meal;
+			sourceTree = "<group>";
+		};
+		479B812B26042CD0005AA267 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				479B812C26042CD0005AA267 /* SignupCollectView.swift */,
+				479B812D26042CD0005AA267 /* SinginView.swift */,
+				479B812E26042CD0005AA267 /* SigupSuccessView.swift */,
+				479B812F26042CD0005AA267 /* SignupView.swift */,
+				479B813026042CD0005AA267 /* ConfirmationView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		479B814D26042CE6005AA267 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				479B815426042CE8005AA267 /* Apply */,
+				479B816726042CEB005AA267 /* Calendar */,
+				479B816526042CEB005AA267 /* Chat */,
+				479B814F26042CE7005AA267 /* Mypage */,
+				479B816926042CEB005AA267 /* Meal */,
+				479B815F26042CEA005AA267 /* Account */,
+				479B814E26042CE7005AA267 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		479B814F26042CE7005AA267 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				479B815226042CE7005AA267 /* MypageModel.swift */,
+				479B815326042CE7005AA267 /* MypageSubView.swift */,
+				479B815126042CE7005AA267 /* MypageView.swift */,
+				479B815026042CE7005AA267 /* ChangePWView.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		479B815426042CE8005AA267 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				479B815D26042CE9005AA267 /* ApplyView.swift */,
+				479B815926042CE9005AA267 /* ApplyExtensionDetailUIKitView.swift */,
+				479B815826042CE8005AA267 /* ApplyExtensionDetailUI.storyboard */,
+				479B815526042CE8005AA267 /* ApplyMusicView.swift */,
+				479B815626042CE8005AA267 /* ApplyMusicDetailView.swift */,
+				479B815B26042CE9005AA267 /* ApplyExtensionView.swift */,
+				479B815726042CE8005AA267 /* ApplySundayRestView.swift */,
+				479B815A26042CE9005AA267 /* ApplyExtensionDetailView.swift */,
+				479B815C26042CE9005AA267 /* ApplyGoingOutView.swift */,
+				479B815E26042CEA005AA267 /* ApplyGoingHomeView.swift */,
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
+		479B815F26042CEA005AA267 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				479B816426042CEB005AA267 /* SignupCollectView.swift */,
+				479B816326042CEA005AA267 /* SinginView.swift */,
+				479B816226042CEA005AA267 /* SigupSuccessView.swift */,
+				479B816026042CEA005AA267 /* SignupView.swift */,
+				479B816126042CEA005AA267 /* ConfirmationView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		479B816526042CEB005AA267 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				479B816626042CEB005AA267 /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		479B816726042CEB005AA267 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				479B816826042CEB005AA267 /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		479B816926042CEB005AA267 /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				479B816A26042CEB005AA267 /* MealContentsView.swift */,
+				479B816B26042CEB005AA267 /* MealModel.swift */,
+				479B816C26042CEC005AA267 /* MealView.swift */,
+			);
+			path = Meal;
+			sourceTree = "<group>";
+		};
+		4F9A9ED92A87E41CCABC60C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C8C041CD1F2049BA2520BDA /* Pods_DMS_for_DSM_V4.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0CA3C75266A746A69FCBCF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC3BD691C6E7BEB5ECE3B637 /* Pods-DMS for DSM V4.debug.xcconfig */,
+				C5A030A4F678720D6A69E8EB /* Pods-DMS for DSM V4.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +447,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 479B805F2600804D005AA267 /* Build configuration list for PBXNativeTarget "DMS for DSM V4" */;
 			buildPhases = (
+				73CBF019D1EB019EC8ED8CF9 /* [CP] Check Pods Manifest.lock */,
 				479B804C2600804B005AA267 /* Sources */,
 				479B804D2600804B005AA267 /* Frameworks */,
 				479B804E2600804B005AA267 /* Resources */,
+				A6DE3CF1DAE0F3CBCDF5C095 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +499,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479B80D526042305005AA267 /* NanumSquareB.otf in Resources */,
+				479B80D626042305005AA267 /* NanumSquareEB.otf in Resources */,
+				479B80D726042305005AA267 /* NanumSquareL.otf in Resources */,
+				479B80D826042305005AA267 /* NanumSquareR.otf in Resources */,
+				479B813426042CD0005AA267 /* ApplyExtensionDetailUI.storyboard in Resources */,
+				479B80CF260422D2005AA267 /* Launch Screen.storyboard in Resources */,
 				479B805B2600804D005AA267 /* Preview Assets.xcassets in Resources */,
 				479B80582600804D005AA267 /* Assets.xcassets in Resources */,
 			);
@@ -133,13 +512,94 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		73CBF019D1EB019EC8ED8CF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DMS for DSM V4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6DE3CF1DAE0F3CBCDF5C095 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DMS for DSM V4/Pods-DMS for DSM V4-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DMS for DSM V4/Pods-DMS for DSM V4-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DMS for DSM V4/Pods-DMS for DSM V4-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		479B804C2600804B005AA267 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				479B80562600804B005AA267 /* ContentView.swift in Sources */,
+				479B814326042CD0005AA267 /* MealModel.swift in Sources */,
+				479B80F4260429CB005AA267 /* APIProtocol.swift in Sources */,
+				479B814A26042CD0005AA267 /* ContentView.swift in Sources */,
+				479B813D26042CD0005AA267 /* ChatView.swift in Sources */,
+				479B813926042CD0005AA267 /* ApplyExtensionDetailView.swift in Sources */,
+				479B814826042CD0005AA267 /* SignupView.swift in Sources */,
+				479B813B26042CD0005AA267 /* ApplyGoingHomeView.swift in Sources */,
+				479B810126042C7E005AA267 /* ApplyAPI.swift in Sources */,
+				479B814626042CD0005AA267 /* SinginView.swift in Sources */,
+				479B80E726042645005AA267 /* CalendarDate.swift in Sources */,
+				479B80ED26042682005AA267 /* CalendarColorSetting.swift in Sources */,
+				479B810426042C9D005AA267 /* Connector.swift in Sources */,
+				479B814026042CD0005AA267 /* MypageView.swift in Sources */,
+				479B80E426042619005AA267 /* CalendarCell.swift in Sources */,
+				479B813826042CD0005AA267 /* ApplySundayRestView.swift in Sources */,
+				479B813226042CD0005AA267 /* ApplyView.swift in Sources */,
+				479B810D26042CBF005AA267 /* KeyBoardGuardian.swift in Sources */,
+				479B813326042CD0005AA267 /* ApplyExtensionDetailUIKitView.swift in Sources */,
+				479B80F8260429E3005AA267 /* MealApi.swift in Sources */,
+				479B813526042CD0005AA267 /* ApplyMusicView.swift in Sources */,
+				479B80FB260429F4005AA267 /* AuthAPI.swift in Sources */,
+				479B810E26042CBF005AA267 /* Toaster.swift in Sources */,
+				479B813F26042CD0005AA267 /* MypageSubView.swift in Sources */,
+				479B80FE26042B93005AA267 /* InfoAPI.swift in Sources */,
+				479B813726042CD0005AA267 /* ApplyExtensionView.swift in Sources */,
+				479B814726042CD0005AA267 /* SigupSuccessView.swift in Sources */,
+				479B814426042CD0005AA267 /* MealView.swift in Sources */,
+				479B814926042CD0005AA267 /* ConfirmationView.swift in Sources */,
+				479B813E26042CD0005AA267 /* MypageModel.swift in Sources */,
+				479B80F0260426B8005AA267 /* CalendarMonth.swift in Sources */,
 				479B80542600804B005AA267 /* DMS_for_DSM_V4App.swift in Sources */,
+				479B814226042CD0005AA267 /* MealContentsView.swift in Sources */,
+				479B810C26042CBF005AA267 /* Base.swift in Sources */,
+				479B813C26042CD0005AA267 /* CalendarView.swift in Sources */,
+				479B813A26042CD0005AA267 /* ApplyGoingOutView.swift in Sources */,
+				479B810F26042CBF005AA267 /* Token.swift in Sources */,
+				479B814126042CD0005AA267 /* ChangePWView.swift in Sources */,
+				479B80EA26042664005AA267 /* CalendarManager.swift in Sources */,
+				479B813626042CD0005AA267 /* ApplyMusicDetailView.swift in Sources */,
+				479B811026042CBF005AA267 /* Color.swift in Sources */,
+				479B814526042CD0005AA267 /* SignupCollectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +724,7 @@
 		};
 		479B80602600804D005AA267 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC3BD691C6E7BEB5ECE3B637 /* Pods-DMS for DSM V4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +747,7 @@
 		};
 		479B80612600804D005AA267 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5A030A4F678720D6A69E8EB /* Pods-DMS for DSM V4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
