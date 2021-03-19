@@ -1,9 +1,8 @@
 //
 //  ApplyView.swift
-//  DMS_SwiftUI
+//  DMS for DSM V4
 //
-//  Created by leedonggi on 2019/09/24.
-//  Copyright © 2019 leedonggi. All rights reserved.
+//  Created by DohyunKim on 2021/03/19.
 //
 
 import SwiftUI
@@ -103,3 +102,4 @@ private struct CardView: View {
         .shadow(color: Color("CustomShadow"), radius: 3, x: 0, y: 2)
     }
 }
+

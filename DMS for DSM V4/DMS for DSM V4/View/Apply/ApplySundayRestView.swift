@@ -1,9 +1,8 @@
 //
-//  ApplySundayRest.swift
-//  DMS_SwiftUI
+//  ApplySundayRestView.swift
+//  DMS for DSM V4
 //
-//  Created by leedonggi on 2020/06/04.
-//  Copyright © 2020 leedonggi. All rights reserved.
+//  Created by DohyunKim on 2021/03/19.
 //
 
 import SwiftUI
@@ -53,3 +52,4 @@ struct RestCardView: View {
         }
     }
 }
+

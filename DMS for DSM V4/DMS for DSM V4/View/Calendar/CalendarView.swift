@@ -1,9 +1,8 @@
 //
 //  CalendarView.swift
-//  DMS_SwiftUI
+//  DMS for DSM V4
 //
-//  Created by leedonggi on 2020/06/01.
-//  Copyright © 2020 leedonggi. All rights reserved.
+//  Created by DohyunKim on 2021/03/19.
 //
 
 import SwiftUI

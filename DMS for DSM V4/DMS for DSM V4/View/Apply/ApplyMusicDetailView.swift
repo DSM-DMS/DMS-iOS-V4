@@ -1,9 +1,8 @@
 //
-//  ApplyMusicDetail.swift
-//  DMS_v4
+//  ApplyMusicDetailView.swift
+//  DMS for DSM V4
 //
-//  Created by leedonggi on 2020/08/13.
-//  Copyright © 2020 leedonggi. All rights reserved.
+//  Created by DohyunKim on 2021/03/19.
 //
 
 import SwiftUI
@@ -119,3 +118,4 @@ struct MusicListView: View {
         }
     }
 }
+

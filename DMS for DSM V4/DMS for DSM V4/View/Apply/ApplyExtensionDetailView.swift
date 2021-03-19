@@ -1,9 +1,8 @@
 //
 //  ApplyExtensionDetailView.swift
-//  DMS_SwiftUI
+//  DMS for DSM V4
 //
-//  Created by leedonggi on 2020/06/02.
-//  Copyright © 2020 leedonggi. All rights reserved.
+//  Created by DohyunKim on 2021/03/19.
 //
 
 import SwiftUI
@@ -34,7 +33,7 @@ struct ApplyExtensionDetailView: View {
                 ForEach(0..<classNameArr[floor - 1].count, id: \.self) { i in
                     ClassNameView(className: "\(self.classNameArr[self.floor - 1][i])")
                         .onTapGesture {
-                            self.selectedClass = i + 1 
+                            self.selectedClass = i + 1
                             self.getMap()
                     }
                 }
@@ -223,3 +222,4 @@ extension String {
         return Int(self) != nil
     }
 }
+

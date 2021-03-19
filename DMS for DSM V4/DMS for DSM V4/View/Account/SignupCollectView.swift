@@ -1,9 +1,8 @@
 //
 //  SignupCollectView.swift
-//  DMS_v4
+//  DMS for DSM V4
 //
-//  Created by leedonggi on 2020/06/17.
-//  Copyright © 2020 leedonggi. All rights reserved.
+//  Created by DohyunKim on 2021/03/19.
 //
 
 import SwiftUI
@@ -88,5 +87,6 @@ struct SignupCollectView_Previews: PreviewProvider {
         SignupCollectView()
     }
 }
+
 
 

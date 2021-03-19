@@ -1,9 +1,8 @@
 //
 //  ContentView.swift
-//  DMS_SwiftUI
+//  DMS for DSM V4
 //
-//  Created by leedonggi on 2019/09/23.
-//  Copyright © 2019 leedonggi. All rights reserved.
+//  Created by DohyunKim on 2021/03/19.
 //
 
 import SwiftUI
@@ -38,7 +37,7 @@ struct TabbedView: View {
                     Image("icon_event")
                     Text("일정")
             }
-            ApplyView() 
+            ApplyView()
                 .tabItem {
                     Image("icon_apply")
                     Text("신청")
@@ -58,4 +57,5 @@ struct TabbedView: View {
         .accentColor(Color.white)
     }
 }
+
 
