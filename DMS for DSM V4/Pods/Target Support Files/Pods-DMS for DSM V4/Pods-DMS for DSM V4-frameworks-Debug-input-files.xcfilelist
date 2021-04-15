@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-DMS for DSM V4/Pods-DMS for DSM V4-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework
+${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
