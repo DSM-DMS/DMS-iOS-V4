@@ -1,6 +1,0 @@
-framework module Pods_DMS_SwiftUI {
-  umbrella header "Pods-DMS_SwiftUI-umbrella.h"
-
-  export *
-  module * { export * }
-}
